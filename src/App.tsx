@@ -5,13 +5,14 @@ import "./App.css";
 import Sidebar from "./layout/Sidebar";
 import AuthenticatedLayout from "./layout/AuthenticatedLayout";
 import Overview from "./pages/Overview";
+import WorkflowPlayground from "./pages/WorkflowPlayground";
 
 function App() {
   return (
     <>
       <div>
         <AuthenticatedLayout>
-          <Overview />
+          <WorkflowPlayground />
         </AuthenticatedLayout>
       </div>
     </>

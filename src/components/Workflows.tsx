@@ -24,7 +24,9 @@ export default function Workflows({ workflows }: { workflows: Workflow[] }) {
             <p className="mb-10">Create your first workflow</p>
             <div className=" rounded-md flex flex-col items-center justify-center bg-zinc-700 py-25">
               <StickyNote className="h-12 w-10" />
-              <p>Start from Scratch</p>
+              <p onClick={()=>{
+                
+              }}>Start from Scratch</p>
             </div>
           </div>
         </div>
