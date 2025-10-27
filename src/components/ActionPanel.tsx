@@ -46,6 +46,14 @@ const ActionPanel = () => {
     }
   };
 
+  const handleDragStart = (
+    e: React.DragEvent<HTMLDivElement>,
+    node: NodeType
+  ) => {
+    e.dataTransfer.effectAllowed = "copy";
+    e.dataTransfer.setData("application/json", JSON.stringify(node));
+  };
+
   return (
     <>
       <button
@@ -77,8 +85,10 @@ const ActionPanel = () => {
           {nodeList.map((node) => (
             <div
               key={node.id}
+              draggable
+              onDragStart={(e) => handleDragStart(e, node)}
               onClick={() => setSelectedNodeId(node.id)}
-              className={`p-3 rounded cursor-pointer transition-all border mb-2 ${
+              className={`p-3 rounded cursor-move transition-all border mb-2 ${
                 selectedNodeId === node.id
                   ? "bg-zinc-600 text-white border-white shadow-lg"
                   : "bg-zinc-700 text-white hover:bg-zinc-600 border-gray-600 hover:border-gray-500"
